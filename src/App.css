@@ -2,9 +2,22 @@ body {
   background-color: aliceblue;
 }
 
+.todo-form {
+  display: flex;
+  width: fit-content;
+  float: right;
+}
+
 .App {
   text-align: center;
   font-family: 'Roboto';
+}
+
+.todo-list
+{
+  display: flex;
+  width: "200%";
+  float: left;
 }
 
 .App-logo {
