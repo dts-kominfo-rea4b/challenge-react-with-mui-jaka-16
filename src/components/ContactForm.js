@@ -3,7 +3,7 @@
 // dan Card
 // https://mui.com/material-ui/react-card/#basic-card
 
-import { Button, Card, CardActions, FormControl, TextField } from "@mui/material";
+import { Button, Card, CardActions, CardContent, FormControl, TextField } from "@mui/material";
 import { useState } from "react";
 
 const ContactForm = ({ handleNewAddContact }) => {
@@ -25,28 +25,28 @@ const ContactForm = ({ handleNewAddContact }) => {
 
     return (<div className="todo-form">
         <Card sx={{ width: "500px"}}>
-            <FormControl sx={{ paddingTop: "30px"}} >
+            <CardContent>
                 <FormControl sx={{ marginBottom: "10px"}}>
                     <TextField sx={{ width: "450px"}}  label="Name" name="name" variant="outlined" value={data.name} onChange={changeValue} />
                 </FormControl>
                 <FormControl sx={{ marginBottom: "10px"}}>
-                    <TextField label="Phone" name="phone" variant="outlined" value={data.phone} onChange={changeValue} />
+                    <TextField sx={{ width: "450px"}} label="Phone" name="phone" variant="outlined" value={data.phone} onChange={changeValue} />
                 </FormControl>
                 <FormControl sx={{ marginBottom: "10px"}}>
-                    <TextField label="Email" name="email" variant="outlined" value={data.email} onChange={changeValue} />
+                    <TextField sx={{ width: "450px"}} label="Email" name="email" variant="outlined" value={data.email} onChange={changeValue} />
                 </FormControl>
-                <FormControl sx={{ marginBottom: "10px"}} >
-                    <TextField label="Photo URL" name="photo" variant="outlined" value={data.photo} onChange={changeValue} />
+                <FormControl >
+                    <TextField sx={{ width: "450px"}} label="Photo URL" name="photo" variant="outlined" value={data.photo} onChange={changeValue} />
                 </FormControl>
-                <CardActions>
-                    <Button onClick={() => { handleNewAddContact(data); setData({
+            </CardContent>
+            <CardActions>
+                    <Button sx={{ marginLeft: "15px"}} onClick={() => { handleNewAddContact(data); setData({
             "name": "",
             "phone": "",
             "email": "",
             "photo": ""
         })}} >Add Contact</Button>
-                </CardActions>
-            </FormControl>
+            </CardActions>
         </Card>
         </div>
     );

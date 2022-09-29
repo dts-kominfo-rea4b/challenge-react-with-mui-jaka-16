@@ -24,12 +24,15 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Grid container spacing={10}>
+      <Grid container spacing={10} sx={{paddingTop: "20px"}} >
         <Grid item md="6">
           <ContactForm handleNewAddContact={handleNewContact} />
         </Grid>
         <Grid item md="6">
-            <Contact data={datas} />
+          {datas.map((data) => 
+            (<Contact data={data} />
+            ))
+          }
         </Grid>
       </Grid>
     </div>
